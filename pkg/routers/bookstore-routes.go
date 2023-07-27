@@ -5,10 +5,10 @@ import (
 	"github.com/phhao06/book-store/pkg/controllers"
 )
 
-var RegisterBookStoreRoutes = func(route *mux.Router) {
-	router.HandleFunc("/book/", controllers.CreateBook).Method("POST")
-	router.HandleFunc("/book/", controllers.GetBook).Method("GET")
-	router.HandleFunc("/book/{bookId}", controllers.GetBookById).Method("GET")
-	router.HandleFunc("/book/{bookId}", controllers.UpdateBook).Method("PUT")
-	router.HandleFunc("/book/{bookId}", controllers.DeleteBook).Method("DELETE")
+var RegisterBookStoreRoutes = func(router *mux.Router) {
+	router.HandleFunc("/book/", controllers.CreateBook).Methods("POST")
+	router.HandleFunc("/book/", controllers.GetBook).Methods("GET")
+	router.HandleFunc("/book/{bookId}", controllers.GetBookById).Methods("GET")
+	router.HandleFunc("/book/{bookId}", controllers.UpdateBook).Methods("PUT")
+	router.HandleFunc("/book/{bookId}", controllers.DeleteBook).Methods("DELETE")
 }
